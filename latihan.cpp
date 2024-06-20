@@ -7,10 +7,16 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    Hero Ayaka = Hero("Kamisato Ayaka");
+
+    AyakaHero Ayaka("Kamisato Ayaka");
+    SenheHero Senhe("Senhe", 120, 130, 10, 50);
     Makan soto = Makan("Soto",12,5);
-    Ayaka.display();
-    Ayaka.makan(soto);
-    Ayaka.display();
+
+    Ayaka.displayAyakaHero();
+    cout << endl;
+    Senhe.senheSkill(Ayaka);
+    cout << endl;
+    Ayaka.displayAyakaHero();
+
     return 0;
 }
