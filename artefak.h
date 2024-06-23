@@ -5,6 +5,7 @@
 #include <string>
 
 class Artefak{
+    friend class Hero;
     protected:
         std::string name;
         std::string kategori;
@@ -22,8 +23,8 @@ class Artefak{
         void dispalyArtefak(){
             std::cout << "Nama artefak \t :" << this->name << std::endl;
             std::cout << "Kategori \t :" << this->kategori << std::endl;
-            std::cout << "Attak \t :" << this->attak << std::endl;
-            std::cout << "HP \t :" << this->HP << std::endl;
+            std::cout << "Attak \t\t:" << this->attak << std::endl;
+            std::cout << "HP \t\t:" << this->HP << std::endl;
         }
 };
 

@@ -4,7 +4,9 @@
 #include<string>
 #include "makanan.h"
 #include "weapon.h"
+#include "artefak.h"
 
+//Base class
 class Hero{
     protected:
         std::string name;
@@ -38,8 +40,14 @@ class Hero{
         void useWeapon(Weapon obj){
             this->attak += obj.baseAttak;
         }
+
+        void useArtefak(Artefak obj){
+            this->attak += obj.attak;
+            this->HP += obj.HP;
+        }
 };
 
+// SUB CLASS FROM HERO
 class AyakaHero : public Hero{
     friend class SenheHero;
     protected:
