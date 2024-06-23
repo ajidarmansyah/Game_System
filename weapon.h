@@ -12,16 +12,16 @@ class Weapon{
         float baseAttak;
     
     public:
-        Weapon(const char* name, const char* kategori, float baseAttak){
+        Weapon(const char* name, const char* kategori, float baseAttak = 0){
             this->name = name;
             this->kategori = kategori;
             this->baseAttak = baseAttak;
         }
 
-        void display(){
+        void displayWeapon(){
             std::cout << "Nama senjata \t:" << this->name << std::endl;
-            std::cout << "Nama senjata \t:" << this->kategori << std::endl;
-            std::cout << "Nama senjata \t:" << this->baseAttak << std::endl;
+            std::cout << "Nama kategori \t:" << this->kategori << std::endl;
+            std::cout << "Nama baseAttak \t:" << this->baseAttak << std::endl;
         }
 };
 

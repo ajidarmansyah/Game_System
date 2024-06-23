@@ -7,12 +7,12 @@ class Makan{
     friend class Hero;
     private:
         std::string namaMakanan;
-        int buffHP;
-        int buffAttak;
-        int buffDeffece;
+        float buffHP;
+        float buffAttak;
+        float buffDeffece;
     
     public:
-        Makan(const char* name, int nilaiHP = 0, int nilaiAttak = 0, int nilaiDeffece = 0){
+        Makan(const char* name, float nilaiHP = 0, float nilaiAttak = 0, float nilaiDeffece = 0){
             this-> namaMakanan = name;
             this-> buffHP = nilaiHP;
             this-> buffAttak = nilaiAttak;

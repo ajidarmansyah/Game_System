@@ -8,12 +8,12 @@
 class Hero{
     protected:
         std::string name;
-        int HP;
-        int attak;
-        int deffece;
+        float HP;
+        float attak;
+        float deffece;
     
     public:
-        Hero(const char* name, int HP = 100, int attak = 50, int deffece = 20){
+        Hero(const char* name, float HP = 100.0, float attak = 50.0, float deffece = 20.0){
             this->name = name;
             this->HP = HP;
             this->attak = attak;
@@ -43,14 +43,14 @@ class Hero{
 class AyakaHero : public Hero{
     friend class SenheHero;
     protected:
-        int cryoBonus;
+        float cryoBonus;
     
     public:
         AyakaHero(const char* name = "hero", 
-                int HP = 100, 
-                int attak = 50, 
-                int deffece = 20, 
-                int valueCryoBonus = 0) : Hero(name, HP, attak, deffece){
+                float HP = 100.0, 
+                float attak = 50.0, 
+                float deffece = 20.0, 
+                float valueCryoBonus = 0) : Hero(name, HP, attak, deffece){
             
             this->cryoBonus = valueCryoBonus;
         }
@@ -68,14 +68,14 @@ class AyakaHero : public Hero{
 
 class SenheHero : public Hero{
     protected:
-        int cryoBonus;
+        float cryoBonus;
     
     public:
         SenheHero(const char* name = "hero", 
-                int HP = 100, 
-                int attak = 50, 
-                int deffece = 20, 
-                int valueCryoBonus = 0) : Hero(name, HP, attak, deffece){
+                float HP = 100.0, 
+                float attak = 50.0, 
+                float deffece = 20.0, 
+                float valueCryoBonus = 0) : Hero(name, HP, attak, deffece){
             
             this->cryoBonus = valueCryoBonus;
         }
