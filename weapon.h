@@ -4,103 +4,28 @@
 #include <string>
 
 // BASE CLASS FOR WEAPON
-class Sword{
+class Weapon{
+    friend class Hero;
     protected:
         std::string name;
-        std::string criteria = "Sword";
-        int attak;
+        std::string kategori;
+        float baseAttak;
     
     public:
-        Sword(const char* name, int Attak){
+        Weapon(const char* name, const char* kategori, float baseAttak){
             this->name = name;
-            this->attak = Attak;
+            this->kategori = kategori;
+            this->baseAttak = baseAttak;
         }
 
-        void displayWepon(){
-            std::cout << "Wepon Name \t:" << this->name << std::endl;
-            std::cout << "kategori \t:" << this->criteria << std::endl;
-            std::cout << "Attak \t:" << this->attak << std::endl;
+        void display(){
+            std::cout << "Nama senjata \t:" << this->name << std::endl;
+            std::cout << "Nama senjata \t:" << this->kategori << std::endl;
+            std::cout << "Nama senjata \t:" << this->baseAttak << std::endl;
         }
 };
 
-class Boow{
-    protected:
-        std::string name;
-        std::string criteria = "Boow";
-        int attak;
-    
-    public:
-        Boow(const char* name, int Attak){
-            this->name = name;
-            this->attak = Attak;
-        }
-
-        void displayWepon(){
-            std::cout << "Wepon Name \t:" << this->name << std::endl;
-            std::cout << "kategori \t:" << this->criteria << std::endl;
-            std::cout << "Attak \t:" << this->attak << std::endl;
-        }
-};
-
-class Polearm{
-    protected:
-        std::string name;
-        std::string criteria = "Polearm";
-        int attak;
-    
-    public:
-        Polearm(const char* name, int Attak){
-            this->name = name;
-            this->attak = Attak;
-        }
-
-        void displayWepon(){
-            std::cout << "Wepon Name \t:" << this->name << std::endl;
-            std::cout << "kategori \t:" << this->criteria << std::endl;
-            std::cout << "Attak \t:" << this->attak << std::endl;
-        }
-};
-
-class Claymore{
-    protected:
-        std::string name;
-        std::string criteria = "Calymore";
-        int attak;
-    
-    public:
-        Claymore(const char* name, int Attak){
-            this->name = name;
-            this->attak = Attak;
-        }
-
-        void displayWepon(){
-            std::cout << "Wepon Name \t:" << this->name << std::endl;
-            std::cout << "kategori \t:" << this->criteria << std::endl;
-            std::cout << "Attak \t:" << this->attak << std::endl;
-        }
-};
-
-class Catalyst{
-    protected:
-        std::string name;
-        std::string criteria = "Catalyst";
-        int attak;
-    
-    public:
-        Catalyst(const char* name, int Attak){
-            this->name = name;
-            this->attak = Attak;
-        }
-
-        void displayWepon(){
-            std::cout << "Wepon Name \t:" << this->name << std::endl;
-            std::cout << "kategori \t:" << this->criteria << std::endl;
-            std::cout << "Attak \t:" << this->attak << std::endl;
-        }
-};
-
-
-//SUB CLASS FOROM BASE CLASS WEAPON
+//FUNTCION FOR WEAPON
 
 
 #endif

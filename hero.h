@@ -3,6 +3,7 @@
 #include<iostream>
 #include<string>
 #include "makanan.h"
+#include "weapon.h"
 
 class Hero{
     protected:
@@ -34,6 +35,9 @@ class Hero{
             std::cout << this->name << " makan " << obj.namaMakanan << std::endl;
         }
 
+        void useWeapon(Weapon obj){
+            this->attak += obj.baseAttak;
+        }
 };
 
 class AyakaHero : public Hero{
