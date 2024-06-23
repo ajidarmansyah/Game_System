@@ -14,8 +14,8 @@ int main(int argc, char const *argv[])
     Makan soto = Makan("Soto",12,5);
     Weapon favonius = Weapon("favonius","Sword", 50);
 
-    Ayaka.display();
-    Ayaka.useWeapon(favonius);
-    Ayaka.display();
+    Senhe.display();
+    Senhe.useWeapon(favonius);
+    Senhe.display();
     return 0;
 }
