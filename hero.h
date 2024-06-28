@@ -22,6 +22,7 @@ class Hero{
             this->deffece = deffece;
         }
 
+        // method untuk melihat statistik karakter
         void display(){
             std::cout << "Nama \t\t:" << this->name << std::endl;
             std::cout << "HP \t\t:" << this->HP << std::endl;
@@ -29,6 +30,7 @@ class Hero{
             std::cout << "Deffece \t:" << this->deffece << std::endl;
         }
         
+        // method untuk makan
         void makan(Makan obj){
             this->attak += obj.buffAttak;
             this->HP += obj.buffHP;
@@ -37,17 +39,36 @@ class Hero{
             std::cout << this->name << " makan " << obj.namaMakanan << std::endl;
         }
 
+        // method untuk menggunakan senjata
         void useWeapon(Weapon obj){
             this->attak += obj.baseAttak;
         }
 
-        void useArtefak(Artefak obj){
-            this->attak += obj.attak;
-            this->HP += obj.HP;
+        // method untuk menggunakan artefak
+        void useArtefak(Artefak obj1, Artefak obj2, Artefak obj3, Artefak obj4){
+
+            // passive untuk 2 set artefak
+            if (obj1.kategori == "crimson" && obj2.kategori == "crimson"){
+                this->attak += 20;
+            } else if (obj1.kategori == "gladiator" && obj2.kategori == "gladiator"){
+                this->HP += 30;
+            }
+
+            // passive untuk 4 set artefak
+            if (obj1.kategori == "crimson" && obj2.kategori == "crimson" && obj3.kategori == "crimson" && obj4.kategori == "crimson"){
+                this->deffece += 20;
+            } else if (obj1.kategori == "gladiator" && obj2.kategori == "gladiator" && obj3.kategori == "gladiator" && obj4.kategori == "gladiator"){
+                this->attak += 10;
+            }
+            
+            this->attak += obj1.attak + obj2.attak;
+            this->HP += obj1.HP + obj2.HP;
         }
 };
 
 // SUB CLASS FROM HERO
+
+// hero ayaka
 class AyakaHero : public Hero{
     friend class SenheHero;
     protected:
@@ -63,17 +84,20 @@ class AyakaHero : public Hero{
             this->cryoBonus = valueCryoBonus;
         }
 
+        // method untuk melihat statistik karakter ayaka
         void displayAyakaHero(){
             Hero::display();
             std::cout << "Cryo bonus \t:" << this->cryoBonus << std::endl;
         }
 
+        // method skill karakter ayaka
         int ayakaSkill(){
             std::cout << "Ayaka melancarkan skill : "<< this->attak << std::endl;
             return this->attak;
         }
 };
 
+// hero senhe
 class SenheHero : public Hero{
     protected:
         float cryoBonus;
@@ -88,11 +112,13 @@ class SenheHero : public Hero{
             this->cryoBonus = valueCryoBonus;
         }
 
+        // method untuk melihat statistik karakter senhe
         void displaySenheHero(){
             Hero::display();
             std::cout << "Cryo bonus \t:" << this->cryoBonus << std::endl;
         }
 
+        // // method skill karakter senhe
         int senheSkill(AyakaHero &obj){
             obj.attak += this->cryoBonus;
             std::cout << "Senhe melancarkan skill : " << (this->attak += this->cryoBonus) << std::endl; 
