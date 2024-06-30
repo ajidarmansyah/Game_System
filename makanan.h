@@ -20,6 +20,13 @@ class Makan{
         }
 
         void display(){
+            std::cout << this->namaMakanan << endl;
+            std::cout << this->buffHP << endl;
+            std::cout << this->buffAttak << endl;
+            std::cout << this->buffDeffece << endl;
+        }
+
+        void displayKategori(){
             std::cout << "Nama makanan : " << this->namaMakanan << std::endl;
             if (this->buffAttak > 1){
                 std::cout << "Tipe makanan : buff Attak" << std::endl;
